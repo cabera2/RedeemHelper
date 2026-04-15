@@ -1,0 +1,20 @@
+{
+  "appName": { "message": "리딤 도우미" },
+  "appDesc": { "message": "웹페이지의 리딤 코드를 드래그/우클릭 한 번으로 원하는 게임의 코드 교환 페이지에 즉시 입력하세요!" },
+  "optTitle": { "message": "리딤 도우미 설정" },
+  "optHeader": { "message": "리딤 코드 자동 입력 설정" },
+  "optGameName": { "message": "게임 이름" },
+  "optUrlFormat": { "message": "URL 형식 ({n} 포함)" },
+  "optAdd": { "message": "추가" },
+  "optDelete": { "message": "삭제" },
+  "optGuide": { "message": "* URL에서 코드가 들어갈 자리에 <b>{n}</b>을 적어주세요." },
+  "optReset": { "message": "기본값으로 초기화" },
+  "optResetWarning": { "message": "기본값으로 초기화하시겠습니까?" },
+  "transferPage": { "message": "'{n}' 코드 입력" },
+  "default_1_name": { "message": "원신" },
+  "default_1_url": { "message": "https://genshin.hoyoverse.com/ko/gift?code={n}" },
+  "default_2_name": { "message": "붕괴:스타레일" },
+  "default_2_url": { "message": "https://hsr.hoyoverse.com/gift?code={n}" },
+  "default_3_name": { "message": "젠레스 존 제로" },
+  "default_3_url": { "message": "https://zenless.hoyoverse.com/redemption/gift?code={n}" }
+}

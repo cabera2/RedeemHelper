@@ -1,0 +1,20 @@
+{
+  "appName": { "message": "交換コードヘルパー" },
+  "appDesc": { "message": "ウェブページの交換コードをドラッグ/右クリックで交換ページに自動入力！" },
+  "optTitle": { "message": "交換コードヘルパー設定" },
+  "optHeader": { "message": "交換コード自動入力設定" },
+  "optGameName": { "message": "ゲーム名" },
+  "optUrlFormat": { "message": "URL形式（{n}込み）" },
+  "optAdd": { "message": "追加" },
+  "optDelete": { "message": "削除" },
+  "optGuide": { "message": "* URLでコードが入る箇所に<b>{n}</b>を入れて下さい" },
+  "optReset": { "message": "初期値に戻す" },
+  "optResetWarning": { "message": "初期値に戻しますか？" },
+  "transferPage": { "message": "'{n}'コード入力" },
+  "default_1_name": { "message": "原神" },
+  "default_1_url": { "message": "https://genshin.hoyoverse.com/ja/gift?code={n}" },
+  "default_2_name": { "message": "崩壊：スターレイル" },
+  "default_2_url": { "message": "https://hsr.hoyoverse.com/gift?code={n}" },
+  "default_3_name": { "message": "ゼンレスゾーンゼロ" },
+  "default_3_url": { "message": "https://zenless.hoyoverse.com/redemption/gift?code={n}" }
+}

@@ -1,0 +1,20 @@
+﻿{
+  "appName": { "message": "Redeem Code Helper" },
+  "appDesc": { "message": "Quickly enter redeem codes by dragging and right-clicking! Support for multiple games." },
+  "optTitle": { "message": "Redeem Helper Settings" },
+  "optHeader": { "message": "Auto-Redeem Settings" },
+  "optGameName": { "message": "Game Name" },
+  "optUrlFormat": { "message": "URL Format (Include {n})" },
+  "optAdd": { "message": "Add" },
+  "optDelete": { "message": "Delete" },
+  "optGuide": { "message": "* Replace the code's position in the URL with <b>{n}</b>." },
+  "optReset": { "message": "Reset to Default" },
+  "optResetWarning": { "message": "Are you sure you want to reset to default settings?" },
+  "transferPage": { "message": "Send to '{n}'" },
+  "default_1_name": { "message": "Genshin Impact" },
+  "default_1_url": { "message": "https://genshin.hoyoverse.com/en/gift?code={n}" },
+  "default_2_name": { "message": "Honkai: Star Rail" },
+  "default_2_url": { "message": "https://hsr.hoyoverse.com/gift?code={n}" },
+  "default_3_name": { "message": "Zenless Zone Zero" },
+  "default_3_url": { "message": "https://zenless.hoyoverse.com/redemption/gift?code={n}" }
+}
