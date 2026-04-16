@@ -42,9 +42,16 @@ function renderList() {
         // {n}을 빈 문자열로 치환하여 "미리보기"용 URL 생성
         const previewUrl = game.url.replace('{n}', '');
 
+        // 크롬 내장 파비콘 서비스 URL 생성
+        const faviconUrl = new URL(chrome.runtime.getURL("/_favicon/"));
+        faviconUrl.searchParams.set("pageUrl", previewUrl);
+        faviconUrl.searchParams.set("size", "32");
+
         li.innerHTML = `
       <div style="display: flex; align-items: center; gap: 15px;">
         <input type="checkbox" class="enable-check" data-index="${index}" ${isChecked}>
+        <img src="${faviconUrl.href}" class="favicon-img" 
+        onerror="this.onerror=null; this.src='https://favicon.vemetric.com/${encodeURIComponent(previewUrl)}?size=32';" alt="">
         <div class="item-info">
           <a href="${previewUrl}" target="_blank" class="game-link" title="교환 페이지로 이동">
             <span class="game-name" style="${game.enable === false ? 'color: #ccc;' : ''}">${game.name}</span>
