@@ -6,7 +6,7 @@
   "icons": {
     "128": "icon.png"
   },
-  "version": "1.4",
+  "version": "1.5",
   "permissions": [
     "contextMenus",
     "storage",
