@@ -37,15 +37,21 @@ function renderList() {
         const li = document.createElement('li');
         li.className = 'item';
 
-        // enable 속성이 없거나 true이면 체크된 상태로 표시
         const isChecked = game.enable !== false ? 'checked' : '';
+
+        // {n}을 빈 문자열로 치환하여 "미리보기"용 URL 생성
+        const previewUrl = game.url.replace('{n}', '');
 
         li.innerHTML = `
       <div style="display: flex; align-items: center; gap: 15px;">
         <input type="checkbox" class="enable-check" data-index="${index}" ${isChecked}>
         <div class="item-info">
-          <span class="game-name" style="${game.enable === false ? 'color: #ccc;' : ''}">${game.name}</span>
-          <span class="game-url">${game.url}</span>
+          <a href="${previewUrl}" target="_blank" class="game-link" title="교환 페이지로 이동">
+            <span class="game-name" style="${game.enable === false ? 'color: #ccc;' : ''}">${game.name}</span>
+          </a>
+          <a href="${previewUrl}" target="_blank" class="url-link">
+            <span class="game-url">${game.url}</span>
+          </a>
         </div>
       </div>
       <button class="btn-delete" data-index="${index}">${chrome.i18n.getMessage("optDelete")}</button>
