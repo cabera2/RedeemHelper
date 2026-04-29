@@ -4,10 +4,16 @@
  */
 function updateMenus() {
     chrome.contextMenus.removeAll(() => {
+        // removeAll이 실패했는지 확인 (예: 권한 문제 등)
+        if (chrome.runtime.lastError) {
+            console.error("Error removing context menus: ", chrome.runtime.lastError.message);
+            return;
+        }
+
         chrome.storage.sync.get(["games"], (result) => {
             const games = result.games || [];
             games.forEach((game, index) => {
-                // enable이 명시적으로 false인 경우 메뉴 생성을 건너뜀
+                // enable이 명시적으로 false인 경우 메뉴 생성을 건너김
                 if (game.enable === false) return;
 
                 const labelText = chrome.i18n.getMessage("transferPage").replace("{n}", game.name);
@@ -15,6 +21,10 @@ function updateMenus() {
                     id: `redeem-${index}`, // 원본 배열 인덱스를 유지하여 클릭 리스너와의 정렬 유지
                     title: `${labelText}`,
                     contexts: ["selection"]
+                }, () => {
+                    if (chrome.runtime.lastError) {
+                        console.error(`Error creating context menu for ${game.name}: `, chrome.runtime.lastError.message);
+                    }
                 });
             });
         });
@@ -23,6 +33,7 @@ function updateMenus() {
 
 // 초기화 및 리스너 등록 부분
 chrome.runtime.onInstalled.addListener(updateMenus);
+chrome.runtime.onStartup.addListener(updateMenus); // 추가: 브라우저 시작 시 메뉴 갱신
 chrome.action.onClicked.addListener(() => chrome.runtime.openOptionsPage());
 chrome.storage.onChanged.addListener((changes, area) => {
     if (area === "sync" && changes.games) updateMenus();
